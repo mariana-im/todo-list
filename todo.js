@@ -7,24 +7,20 @@ function addTask() {
     }
     else{
         const NewBox = document.createElement('div')
-        // const txt = document.createElement('a')
-        // const img1 = document.createElement('img')
-        // const img2 = document.createElement('img')
-        // const img3 = document.createElement('img')
+        const txt = document.createElement('a')
+        const img1 = document.createElement('div')
+        const img2 = document.createElement('div')
         
-        // img1.src = "empty-circle.png"
-        // img2.src = "full-circle.png"
-        // img3.src = "x-icon.png"
-        
-        // img1.setAttribute('id', 'empty-circle')
-        // img2.setAttribute('id', 'full-circle')
-        // img3.setAttribute('id', 'x')
-        // txt.textContent = Input.value
+        img1.setAttribute('class', 'circle')
+        img2.setAttribute('id', 'x')
+        txt.textContent = Input.value
         NewBox.setAttribute('class', 'taskbox')
-        // NewBox.setAttribute('id', 'task-box')
+        NewBox.setAttribute('id', 'task-box')
 
         document.getElementById("tasks-box").append(NewBox)
-        // NewBox.append(img1,img2,txt,img3)
+        NewBox.append(img1,txt,img2)
+
+        Input.value = "";
     }
 }
 
@@ -33,7 +29,7 @@ function addTask() {
 document.addEventListener("click", e => {
     if (e.target.matches(".taskbox")) {
         taskbox = document.querySelector(".taskbox")
-        taskbox.classList.toggle("click")
+        e.target.classList.toggle("click")
     }
 })
 
@@ -49,19 +45,13 @@ document.addEventListener("click", e => {
     const x = document.getElementById("x")
     const ToDoBox = document.getElementById("task-box");
     if (e.target === x) {
-        ToDoBox.remove();
+        e.target.remove();
     }
 })
 
 document.addEventListener("click", e => {
-    const circle = document.getElementById("full-circle")
-    const empty = document.getElementById("empty-circle")
-    if (e.target === empty){
-        circle.style.visibility = "visible"
-    }
-
-    if (e.target === circle){
-        circle.style.visibility = "hidden"
+    if (e.target.matches(".circle")){
+        e.target.classList.toggle("full")
     }
 })
 

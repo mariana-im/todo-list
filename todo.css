@@ -94,24 +94,27 @@ body {
 
 #x {
     display: flex;
-    visibility: hidden;
+/*    visibility: hidden;*/
     margin-left: auto;
     margin-right: 30px;
     width: 29px;
     height: 22px;
 }
 
-#full-circle {
+.circle.full {
+    border-radius: 50%;
+    background-color: #7FA290;
+    border: 0px;
     display: flex;
-    position: absolute;
-    margin-left: 29.9px;
-    margin-top: 0.5px;
-    visibility: hidden;
-    width: 25px;
-    height: 25px;
+    margin-right: 15px;
+    margin-left: 30px; 
+    width: 27px;
+    height: 27px;
 }
 
-#empty-circle {
+.circle {
+    border-radius: 50%;
+    border: 2px solid black;
     display: flex;
     margin-right: 15px;
     margin-left: 30px;   
