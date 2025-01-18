@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<!--What's inside the html document-->
+    <head>
+        <!--Metadata (data about data), or data about html document-->
+        <!--Title of html page-->
+        <title>To Do List</title>
+        <!--Links html page with css document-->
+        <link rel="stylesheet" href="ToDo.css">
+    </head>
+
+    <body>
+        <!--What's visible on the page-->
+        <div id="box">
+            <div id="input-box">
+                <input type="text" placeholder= "Write new task" id="new-text"></input>
+                <button onclick="addTask()" id="add-box" type= "button">
+                    Add
+                </button>
+            </div>
+            <div id="tasks-box" class="tasks-box">
+            </div>
+        </div>
+        <script type= "text/javascript" src="ToDo.js"></script>
+    </body>
+</html>

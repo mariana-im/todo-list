@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    /*
+    display -> specified layout used for children
+    information about how an element is displayed
+    */
+    justify-content: center;
+    /* align items horizontally */
+    align-items: center;
+    /* align items vertically */
+    height: 97vh;
+    /* 
+    vh -> viewport height 
+    97% of viewport height
+    */
+}
+
+#box {
+    width: 1050px;
+    height: 495px;
+    
+    border-radius: 40px;
+    padding: 35px;
+
+    background-color: #7FA290;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+#input-box {
+    display: flex;
+    border-radius: 30px;
+    background-color: #ffffff;
+    justify-content: space-between;
+}
+
+#add-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 0px 30px rgba(128, 128, 128, 0.442);
+    background-color: #fafafa;
+    height: 93px;
+    width: 233px;
+    border-radius: 30px;
+    border: none;
+    font-size: 36px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#tasks-box {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    grid-area: tasks;
+    background-color: #ffffff;
+    padding: 15px;
+    height: 350px;
+    flex-direction: column;
+}
+
+.taskbox {
+    align-items: center;
+    box-shadow: 0px 10px 10px rgba(128, 128, 128, 0.211);
+    height: 62px;
+    border-radius: 30px;
+    background-color: #fafafa;
+    margin: 10px;
+    border: none;
+    display: flex;
+    width: min(100%, 1010px);
+    font-size: 32px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.taskbox.click {
+    background-color: pink;
+}
+
+#new-text {
+    border-radius: 30px;
+    padding: 25px;
+    width: min(75%, 760px); 
+    /* My max width will be 760px but if screen is smaller make it 75% of the space*/
+    /* Min value will apply based on screen size */
+    font-size: 32px;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+}
+
+#x {
+    display: flex;
+    visibility: hidden;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 29px;
+    height: 22px;
+}
+
+#full-circle {
+    display: flex;
+    position: absolute;
+    margin-left: 29.9px;
+    margin-top: 0.5px;
+    visibility: hidden;
+    width: 25px;
+    height: 25px;
+}
+
+#empty-circle {
+    display: flex;
+    margin-right: 15px;
+    margin-left: 30px;   
+    width: 24px;
+    height: 24px;
+}
