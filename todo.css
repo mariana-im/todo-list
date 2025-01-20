@@ -58,6 +58,7 @@ body {
     padding: 15px;
     height: 350px;
     flex-direction: column;
+    overflow: auto;
 }
 
 .taskbox {
@@ -74,10 +75,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.taskbox.click {
-    background-color: pink;
-}
-
 #new-text {
     border-radius: 30px;
     padding: 25px;
@@ -92,9 +89,9 @@ body {
     display: flex;
 }
 
-#x {
+.x {
+    pointer-events: none;
     display: flex;
-/*    visibility: hidden;*/
     margin-left: auto;
     margin-right: 30px;
     width: 29px;
@@ -102,12 +99,8 @@ body {
 }
 
 .circle.full {
-    border-radius: 50%;
     background-color: #7FA290;
     border: 0px;
-    display: flex;
-    margin-right: 15px;
-    margin-left: 30px; 
     width: 27px;
     height: 27px;
 }
@@ -120,4 +113,8 @@ body {
     margin-left: 30px;   
     width: 24px;
     height: 24px;
+}
+
+a {
+    margin-bottom: 4px;
 }
