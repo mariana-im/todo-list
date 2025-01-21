@@ -49,6 +49,20 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#new-text {
+    border-radius: 30px;
+    padding: 25px;
+    width: min(75%, 760px); 
+    /* My max width will be 760px but if screen is smaller make it 75% of the space*/
+    /* Min value will apply based on screen size */
+    font-size: 32px;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+}
+
 #tasks-box {
     display: flex;
     align-items: center;
@@ -75,22 +89,16 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#new-text {
-    border-radius: 30px;
-    padding: 25px;
-    width: min(75%, 760px); 
-    /* My max width will be 760px but if screen is smaller make it 75% of the space*/
-    /* Min value will apply based on screen size */
-    font-size: 32px;
-    color: rgb(0, 0, 0);
-    border: none;
-    outline: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
+.taskbox:hover .x {
+    visibility: visible;
+    opacity: 1;
 }
 
 .x {
-    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s ease-in-out;
+
     display: flex;
     margin-left: auto;
     margin-right: 30px;
