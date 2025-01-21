@@ -47,6 +47,7 @@ body {
     border: none;
     font-size: 36px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
 #new-text {
@@ -67,12 +68,12 @@ body {
     display: flex;
     align-items: center;
     border-radius: 30px;
-    grid-area: tasks;
     background-color: #ffffff;
-    padding: 15px;
+    padding: 10px;
     height: 350px;
     flex-direction: column;
     overflow: auto;
+    flex-wrap: wrap;
 }
 
 .taskbox {
@@ -84,21 +85,20 @@ body {
     margin: 10px;
     border: none;
     display: flex;
-    width: min(100%, 1010px);
+    width: 97%;
     font-size: 32px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .taskbox:hover .x {
-    visibility: visible;
     opacity: 1;
 }
 
 .x {
-    visibility: hidden;
     opacity: 0;
-    transition: visibility 1s, opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
+    cursor: pointer;
     display: flex;
     margin-left: auto;
     margin-right: 30px;
@@ -111,9 +111,11 @@ body {
     border: 0px;
     width: 27px;
     height: 27px;
+    cursor: pointer;
 }
 
 .circle {
+    cursor: pointer;
     border-radius: 50%;
     border: 2px solid black;
     display: flex;
