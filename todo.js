@@ -1,27 +1,30 @@
-const Input = document.getElementById("new-text")
-const ToDoTask = document.getElementById("tasks-box")
+const INPUT = document.getElementById("new-text")
+const DELETE = document.getElementById("delete")
+const DONE = document.getElementById("done")
+const NEW = document.getElementById("new")
 
 function addTask() {
-    if(Input.value === ""){
+    if(INPUT.value === ""){
         alert("Please write a task")
     }
     else{
-        const NewBox = document.createElement('div')
-        const txt = document.createElement('a')
-        const img1 = document.createElement('div')
-        const img2 = document.createElement('img')
+        NEW.play()
+        const NEWBOX = document.createElement('div')
+        const TXT = document.createElement('a')
+        const IMG1 = document.createElement('div')
+        const IMG2 = document.createElement('img')
         
-        img1.setAttribute('class', 'circle')
-        img2.setAttribute('class', 'x')
-        img2.src = 'x-icon.png'
-        txt.setAttribute('class', 'txt')
-        txt.textContent = Input.value
-        NewBox.setAttribute('class', 'taskbox')
+        IMG1.setAttribute('class', 'circle')
+        IMG2.setAttribute('class', 'x')
+        IMG2.src = 'x-icon.png'
+        TXT.setAttribute('class', 'txt')
+        TXT.textContent = INPUT.value
+        NEWBOX.setAttribute('class', 'taskbox')
 
-        document.getElementById("tasks-box").append(NewBox)
-        NewBox.append(img1,txt,img2)
+        document.getElementById("tasks-box").append(NEWBOX)
+        NEWBOX.append(IMG1,TXT,IMG2)
 
-        Input.value = "";
+        INPUT.value = ""
     }
 }
 
@@ -31,11 +34,15 @@ function addTask() {
 document.addEventListener("click", e => {
     if (e.target.matches(".circle")){
         e.target.classList.toggle("full")
+        DONE.pause()
+        DONE.currentTime = 0
+        DONE.play()
     }
 })
 
 document.addEventListener('click', e => {
     if (e.target.matches(".x")){
         e.target.parentNode.remove()
+        DELETE.play()
     }
 })
