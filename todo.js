@@ -1,30 +1,44 @@
-const INPUT = document.getElementById("new-text")
-const DELETE = document.getElementById("delete")
-const DONE = document.getElementById("done")
-const NEW = document.getElementById("new")
+const input = document.getElementById("new-text");
+const erase = document.getElementById("delete");
+const done = document.getElementById("done");
+const add = document.getElementById("new");
+
+const apiurl = "https://api.quotable.io/random?tags=motivational";
+const quote = document.getElementById("quote");
+
+/*
+async function getquote() {
+    const response = await fetch(apiurl);
+    let data = await response.json();
+    quote.innerHTML = data["content"];
+    console.log(data);
+} 
+
+getquote();
+*/
 
 function addTask() {
-    if(INPUT.value === ""){
-        alert("Please write a task")
+    if(input.value === ""){
+        alert("Please write a task");
     }
     else{
-        NEW.play()
-        const NEWBOX = document.createElement('div')
-        const TXT = document.createElement('a')
-        const IMG1 = document.createElement('div')
-        const IMG2 = document.createElement('img')
+        add.play();
+        const addbox = document.createElement('div');
+        const txt = document.createElement('a');
+        const img1 = document.createElement('div');
+        const img2 = document.createElement('img');
         
-        IMG1.setAttribute('class', 'circle')
-        IMG2.setAttribute('class', 'x')
-        IMG2.src = 'x-icon.png'
-        TXT.setAttribute('class', 'txt')
-        TXT.textContent = INPUT.value
-        NEWBOX.setAttribute('class', 'taskbox')
+        img1.setAttribute('class', 'circle');
+        img2.setAttribute('class', 'x');
+        img2.src = 'x-icon.png';
+        txt.setAttribute('class', 'txt');
+        txt.textContent = input.value;
+        addbox.setAttribute('class', 'taskbox');
 
-        document.getElementById("tasks-box").append(NEWBOX)
-        NEWBOX.append(IMG1,TXT,IMG2)
+        document.getElementById("tasks-box").append(addbox);
+        addbox.append(img1,txt,img2);
 
-        INPUT.value = ""
+        input.value = "";
     }
 }
 
@@ -33,16 +47,16 @@ function addTask() {
 //e means event object
 document.addEventListener("click", e => {
     if (e.target.matches(".circle")){
-        e.target.classList.toggle("full")
-        DONE.pause()
-        DONE.currentTime = 0
-        DONE.play()
+        e.target.classList.toggle("full");
+        done.pause();
+        done.currentTime = 0;
+        done.play();
     }
-})
+});
 
 document.addEventListener('click', e => {
     if (e.target.matches(".x")){
-        e.target.parentNode.remove()
-        DELETE.play()
+        e.target.parentNode.remove();
+        erase.play();
     }
-})
+});
