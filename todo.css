@@ -4,8 +4,6 @@ body {
     display -> specified layout used for children
     information about how an element is displayed
     */
-
-    /* align items horizontally */
     align-items: center;
     /* align items vertically */
     height: 90vh;
@@ -121,21 +119,6 @@ a.txt {
     max-width: 830px;
     margin-bottom: 4px;
 }
-
-/*
-blockquote {   
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: min(2vw,18px);
-    font-weight: normal;
-    margin-bottom: 20px;
-    margin-top: 0px;
-    max-width: 1000px;
-}
-
-#quote {
-    height: 40px;
-}
-*/
 
 .x {
     opacity: 0;

@@ -6,17 +6,6 @@ const add = document.getElementById("new");
 const apiurl = "https://api.quotable.io/random?tags=motivational";
 const quote = document.getElementById("quote");
 
-/*
-async function getquote() {
-    const response = await fetch(apiurl);
-    let data = await response.json();
-    quote.innerHTML = data["content"];
-    console.log(data);
-} 
-
-getquote();
-*/
-
 function addTask() {
     if(input.value === ""){
         alert("Please write a task");
